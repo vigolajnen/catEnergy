@@ -1,0 +1,47 @@
+.navigation {
+  color: $text-color;
+
+  &--promo {
+    color: $default-color;
+  }
+
+  &__list {
+    @include ListReset();
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: $table) {
+      flex-direction: row;
+      justify-content: start;
+    }
+  }
+
+  &__link {
+    font-family: $mainFontPrimary;
+    font-size: 20px;
+    @include adaptiv-font(18, 20);
+    line-height: 20px;
+    font-style: normal;
+    font-weight: 500;
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @media (min-width: $table) {
+      font-size: 18px;
+      @include adaptiv-font(20, 18);
+      line-height: 24px;
+      font-style: normal;
+      font-weight: normal;
+    }
+
+    @media (min-width: $desktop) {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+}

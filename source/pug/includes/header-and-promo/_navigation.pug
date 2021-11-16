@@ -1,9 +1,21 @@
-nav.navigation
-  button.navigation__toggle(type="button")
-  ul.navigation__list
-    li.navigation__item
-      a(href="#") Главная
-    li.navigation__item
-      a(href="catalog.html") Каталог продукции
-    li.navigation__item
-      a(href="form.html") Подбор программы
+
+if page = "index.tml"
+  nav.navigation
+    button.navigation__toggle(type="button")
+    ul.navigation__list
+      li.navigation__item
+        a.navigation__link(href="#") Главная
+      li.navigation__item
+        a.navigation__link(href="catalog.html") Каталог продукции
+      li.navigation__item
+        a.navigation__link(href="form.html") Подбор программы
+else
+  nav.navigation.navigation--promo
+    button.navigation__toggle(type="button")
+    ul.navigation__list
+      li.navigation__item
+        a.navigation__link(href="#") Главная
+      li.navigation__item
+        a.navigation__link(href="catalog.html") Каталог продукции
+      li.navigation__item
+        a.navigation__link(href="form.html") Подбор программы

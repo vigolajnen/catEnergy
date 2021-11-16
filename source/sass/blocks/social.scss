@@ -1,0 +1,36 @@
+.social {
+  @include ListReset();
+
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  &__item {
+    margin-right: 28px;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+
+  &__link--vk {
+    width: 28px;
+    height: 20px;
+  }
+
+  &__link--inst {
+    width: 23px;
+    height: 23px;
+  }
+
+  &__link--fb {
+    width: 28px;
+    height: 33px;
+  }
+
+  &__link--fb svg {
+    fill: none;
+  }
+
+}
