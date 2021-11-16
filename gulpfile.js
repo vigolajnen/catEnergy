@@ -12,6 +12,7 @@ const rename = require("gulp-rename");
 const webp = require("gulp-webp");
 const svgstore = require("gulp-svgstore");
 const svgo = require("gulp-svgo");
+const cheerio = require("gulp-cheerio");
 const imagemin = require("gulp-imagemin");
 const del = require("del");
 const terser = require("gulp-terser");
@@ -100,6 +101,36 @@ const sprite = () => {
             removeStyleElement: true,
           },
         ],
+      })
+    )
+    .pipe(
+      cheerio({
+        run: function ($) {
+          const defs = Array.from(
+            $("defs").map((i, el) => {
+              const html = $(el).html();
+
+              $(el).remove();
+
+              return html;
+            })
+          ).join("");
+
+          const clipPaths = Array.from(
+            $("clipPath").map((i, el) => {
+              const html = $.html(el);
+
+              $(el).remove();
+
+              return html;
+            })
+          ).join("");
+
+          if (defs.length || clipPaths.length) {
+            $("svg").prepend(`<defs>${defs}${clipPaths}</defs>`);
+          }
+        },
+        parserOptions: { xmlMode: true },
       })
     )
     .pipe(svgstore({ inlineSvg: true }))
