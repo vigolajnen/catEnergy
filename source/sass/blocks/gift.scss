@@ -1,0 +1,25 @@
+.gift {
+  max-width: 245px;
+  padding: 42px;
+  background-color: $basic-green;
+  background-image: url("../../img/catalog/gift-photo-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: $default-color;
+  text-align: center;
+
+  &__icon {
+    width: 80px;
+    height: 84px;
+  }
+
+  &__text {
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: inherit;
+  }
+}

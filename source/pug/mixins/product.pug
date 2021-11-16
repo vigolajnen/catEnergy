@@ -1,0 +1,12 @@
+mixin product(data = {})
+  article.product
+    h3.product__title=data.title
+      span=data.weight + 'г'
+    dl.product__info
+      each item in data.list
+        .product__info-item
+          dt=item.infoName
+          dd=item.infoVal
+    .product__pic
+      img(src=data.src, alt=data.title)
+    button.product__btn(type="button") Заказать

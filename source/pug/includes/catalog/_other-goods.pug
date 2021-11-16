@@ -1,0 +1,18 @@
+include ../../mixins/table.pug
+include ../../mixins/svg_icon.pug
+
+section.catalog__other-goods.other-goods
+  h2.other-goods__title Дополнительные товары
+  +table({
+    class: "other-goods__table",
+    items: [
+      {title: "Сахарозаменитель", count: "1 упаковка (100 г)", price: "200 Р."},
+      {title: "Питьевая вода", count: "5 литров", price: "50 Р."},
+      {title: "молоко", count: "1 литр", price: "100 Р."},
+      {title: "витамины", count: "1 упаковка (30 г)", price: "300 Р."},
+    ]
+  })
+  .other-goods__gift.gift
+    +svg_icon(("../img/sprite.svg"), "icon-gift", "80", "84").gift__icon
+    p.gift__text Закажите все и получите чехол для кота в подарок!
+
