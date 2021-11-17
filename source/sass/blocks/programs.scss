@@ -1,0 +1,108 @@
+.programs {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+  }
+
+  &__item {
+    display: grid;
+
+    padding: 40px 50px;
+    background-color: $basic-grey;
+
+    @media (min-width: $mobile) {
+      grid-template-columns: auto 1fr;
+
+      grid-template-areas:
+        "title icon"
+        "text icon"
+        "link icon";
+    }
+
+    @media (min-width: $desktop) {
+      column-gap: 62px;
+
+      grid-template-areas:
+        "icon title"
+        "text text"
+        "link link";
+    }
+  }
+
+  &__icon {
+    grid-area: icon;
+
+    width: 50px;
+    height: 53px;
+
+    @media (min-width: $mobile) {
+      width: 200px;
+      height: 200px;
+    }
+    @media (min-width: $desktop) {
+      width: 50px;
+      height: 53px;
+    }
+  }
+
+  &__icon--pro {
+    width: 67px;
+    height: 50px;
+
+    @media (min-width: $mobile) {
+      width: 200px;
+      height: 200px;
+    }
+    @media (min-width: $desktop) {
+      width: 67px;
+      height: 50px;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    margin: 0;
+    font-family: $mainFontPrimary;
+    font-size: 24px;
+    line-height: 37px;
+
+    text-transform: uppercase;
+
+    @media (min-width: $mobile) {
+      font-size: 36px;
+      line-height: 36px;
+    }
+  }
+
+  &__text {
+    grid-area: text;
+    margin: 0;
+    margin-bottom: 27px;
+    font-size: 14px;
+    line-height: 18px;
+    color: $special-dark-grey;
+
+    @media (min-width: $mobile) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__link {
+    grid-area: link;
+    display: inline-block;
+    margin-top: auto;
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 16px;
+    color: $basic-black;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    @media (min-width: $mobile) {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+}
