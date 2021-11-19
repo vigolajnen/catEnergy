@@ -42,9 +42,14 @@
   text-transform: uppercase;
 }
 
-$maxWidth: 1440;
+@mixin field($padding, $color: $special_dark-grey, $brcolor) {
+  padding: $padding;
+  border: 1px solid $brcolor;
+  border-radius: 0;
+  text-transform: uppercase;
+}
 
-@mixin pageTitle($pcSize: 60, $mobSize : 36, $mb: 40px) {
+@mixin pageTitle($pcSize: 60, $mobSize: 36, $mb: 40px) {
   margin: 0;
   margin-bottom: $mb;
   line-height: 100%;
