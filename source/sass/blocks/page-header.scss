@@ -1,0 +1,13 @@
+.page-header {
+  
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 50%;
+    align-items: center;
+  }
+
+  &__nav {
+    margin-left: auto;
+  }
+}

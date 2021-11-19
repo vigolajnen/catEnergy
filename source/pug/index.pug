@@ -1,14 +1,11 @@
 //- index.pug
-doctype html
-html.page(lang="ru")
-  include includes/main/_head.pug
-  body.page-body
-    include includes/header-and-promo/_header-and-promo.pug
-    include includes/_programs.pug
-    include includes/_advantages.pug
-    include includes/_demo.pug
 
-    include includes/footer/_contacts.pug
-    include includes/footer/_footer.pug
+extends ./layouts/layout.pug
+block variables
+  - var title = 'Главная страница'
+  - var url = 'index'
 
-    include includes/main/_scripts.pug
+block content
+  include includes/main/_programs.pug
+  include includes/main/_advantages.pug
+  include includes/main/_demo.pug

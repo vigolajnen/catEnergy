@@ -1,6 +1,7 @@
 header.page-header
-  .container
+  .container.page-header__wrapper
     a.page-header__logo(href="#")
       img(src="img/logo.svg", alt="Логотип компании")
 
-    include _navigation.pug
+    .page-header__nav
+      include ../main/_navigation.pug

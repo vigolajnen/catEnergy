@@ -1,0 +1,11 @@
+nav.navigation(class=(url == 'index' ? 'navigation--promo' : ''))
+  button.navigation__toggle(type="button")
+  ul.navigation__list
+    - var i = 1;
+    each value, index in { 'Главная': 'index', 'Каталог продукции': 'catalog', 'Подбор программы': 'form'}
+      if i == 1
+        li.navigation__item.navigation__item--active
+          a.navigation__link(href= "/" + value + ".html")= index
+      else
+        li.navigation__item
+          a.navigation__link(href= "/" + value + ".html")= index

@@ -1,0 +1,16 @@
+//- index.pug
+block variables
+
+doctype html
+html.page(lang="ru")
+  head
+    title #{title}
+  include ../includes/main/_head.pug
+  body.page-body
+    include ../includes/header-and-promo/_header.pug
+
+    block content
+
+    include ../includes/footer/_contacts.pug
+    include ../includes/footer/_footer.pug
+    include ../includes/main/_scripts.pug

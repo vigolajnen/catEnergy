@@ -1,8 +1,8 @@
 .navigation {
   color: $text-color;
 
-  &--promo {
-    color: $default-color;
+  &__toggle {
+    display: none;
   }
 
   &__list {
@@ -18,6 +18,10 @@
       flex-direction: row;
       justify-content: start;
     }
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 35px;
   }
 
   &__link {
@@ -43,5 +47,11 @@
       font-size: 20px;
       line-height: 30px;
     }
+  }
+}
+
+.navigation--promo {
+  & .navigation__link {
+    color: $default-color;
   }
 }

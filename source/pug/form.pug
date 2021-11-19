@@ -1,76 +1,75 @@
-doctype html
-html.page(lang="ru")
-  include includes/main/_head.pug
-  body.page-body
-    include includes/header-and-promo/_header.pug
-    main.page-form
-      .container
-        h1 Подбор программы
+//- form
 
-        form.form(action="https://echo.htmlacademy.ru" method="get" target="_blank")
-          fieldset.form__wrapper
-            legend Заполните анкету, и мы подберем программу питания для вашего кота
-            ul.form__base
-              li
-                label(for="form-name") ИМЯ:*
-                  input(type="text" id="form-name" name="form-name" placeholder="Барсик" required)
-              li
-                label(for="form-weight") Вес (кг):*
-                  input(type="text" id="form-weight" name="form-weight" placeholder="7" required)
-              li
-                label(for="form-age") Возраст (лет):
-                  input(type="text" id="form-age" name="form-age" placeholder="7")
+extends ./layouts/layout-inner.pug
+block variables
+  - var title = 'Подбор программы'
 
-            ul.form__theme
-              li
-                input.visually-hidden(id="theme-1" type="radio" name="form-theme")
-                label(for="theme-1") похудение
-              li
-                input.visually-hidden(id="theme-2" type="radio" name="form-theme")
-                label(for="theme-2") Набор массы
-              li
-                input.visually-hidden(id="theme-3" type="radio" name="form-theme")
-                label(for="theme-3") Не знаю (Нужен ваш совет)
+block content
+  main.page-form
+    .container
+      h1 #{title}
 
-          fieldset
-            legend Контактные данные (владельца кота)
+      form.form(action="https://echo.htmlacademy.ru" method="get" target="_blank")
+        fieldset.form__wrapper
+          legend Заполните анкету, и мы подберем программу питания для вашего кота
+          ul.form__base
+            li
+              label(for="form-name") ИМЯ:*
+                input(type="text" id="form-name" name="form-name" placeholder="Барсик" required)
+            li
+              label(for="form-weight") Вес (кг):*
+                input(type="text" id="form-weight" name="form-weight" placeholder="7" required)
+            li
+              label(for="form-age") Возраст (лет):
+                input(type="text" id="form-age" name="form-age" placeholder="7")
 
-            ul.form__contacts
-              li
-                label(for="form-name") E-mail:*
-                  input(type="email" id="form-name" name="form-name" placeholder="кuklachev@gmail.com" required)
-              li
-                label(for="form-name") Телефон:*
-                  input(type="tel" id="form-name" name="form-name" placeholder="8 (960) 900-60-90" required)
+          ul.form__theme
+            li
+              input.visually-hidden(id="theme-1" type="radio" name="form-theme")
+              label(for="theme-1") похудение
+            li
+              input.visually-hidden(id="theme-2" type="radio" name="form-theme")
+              label(for="theme-2") Набор массы
+            li
+              input.visually-hidden(id="theme-3" type="radio" name="form-theme")
+              label(for="theme-3") Не знаю (Нужен ваш совет)
 
-          fieldset
-            legend Комментарий
+        fieldset
+          legend Контактные данные (владельца кота)
 
-            label(for="form-mess" aria-label="Текст комментария:")
-             textarea(id="form-mess" name="form-mess", cols="30", rows="10" placeholder="Расскажите обо всех повадках кота")
+          ul.form__contacts
+            li
+              label(for="form-name") E-mail:*
+                input(type="email" id="form-name" name="form-name" placeholder="кuklachev@gmail.com" required)
+            li
+              label(for="form-name") Телефон:*
+                input(type="tel" id="form-name" name="form-name" placeholder="8 (960) 900-60-90" required)
 
-          fieldset
-            legend Дополнительно
+        fieldset
+          legend Комментарий
 
-            ul.form__other-info
-              li
-                input.visually-hidden(id="info-1" type="checkbox" name="info-1" checked)
-                label(for="info-1") сахарозаменитель
-              li
-                input.visually-hidden(id="info-2" type="checkbox" name="info-2")
-                label(for="info-2") питьевая вода
-              li
-                input.visually-hidden(id="info-3" type="checkbox" name="info-3")
-                label(for="info-3") молоко
-              li
-                input.visually-hidden(id="info-4" type="checkbox" name="info-4")
-                label(for="info-4") витамины
+          label(for="form-mess" aria-label="Текст комментария:")
+            textarea(id="form-mess" name="form-mess" cols="30" rows="10" placeholder="Расскажите обо всех повадках кота")
 
-          .form__footer
-            button(type="submit") отправить заявку
-            span * — Обязательные поля
+        fieldset
+          legend Дополнительно
 
-    include includes/footer/_contacts.pug
-    
-    include includes/footer/_footer.pug
-    include includes/main/_scripts.pug
+          ul.form__other-info
+            li
+              input.visually-hidden(id="info-1" type="checkbox" name="info-1" checked)
+              label(for="info-1") сахарозаменитель
+            li
+              input.visually-hidden(id="info-2" type="checkbox" name="info-2")
+              label(for="info-2") питьевая вода
+            li
+              input.visually-hidden(id="info-3" type="checkbox" name="info-3")
+              label(for="info-3") молоко
+            li
+              input.visually-hidden(id="info-4" type="checkbox" name="info-4")
+              label(for="info-4") витамины
+
+        .form__footer
+          button(type="submit") отправить заявку
+          span * — Обязательные поля
+
+

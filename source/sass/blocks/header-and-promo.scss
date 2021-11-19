@@ -1,3 +1,13 @@
 .header-and-promo {
-  
+  position: relative;
+
+  &__header {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
 }

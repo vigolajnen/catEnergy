@@ -1,0 +1,59 @@
+.promo {
+  position: relative;
+  padding-top: 140px;
+
+  &::before {
+    z-index: -2;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 720px 100%;
+    background-image: url("../../img/promo/promo-bg-desktop.jpg");
+  }
+
+  &::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: $basic-green;
+    opacity: 0.85;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 63%;
+  }
+
+  &__info {
+    padding-top: 110px;
+
+    & h1 {
+      margin: 0;
+      margin-bottom: 40px;
+      font-size: 60px;
+      line-height: 60px;
+    }
+
+    & p {
+      margin: 0;
+      padding-bottom: 50px;
+      font-size: 20px;
+      line-height: 20px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__link {
+    font-size: 20px;
+    line-height: 20px;
+    @include Link(14px 26px, $default-color, $basic-green);
+  }
+}
