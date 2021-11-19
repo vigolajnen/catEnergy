@@ -1,14 +1,5 @@
 .page-footer {
-  padding: 20px 0;
   background-color: $basic-grey;
-
-  @media (min-width: $table) {
-    padding: 55px 0 61px;
-  }
-
-  @media (min-width: $desktop) {
-    padding: 59px 0 56px;
-  }
 
   &__wrapper {
     display: flex;
@@ -17,9 +8,16 @@
     align-items: center;
     justify-content: center;
 
+    padding: 20px;
+
     @media (min-width: $table) {
+      padding: 55px 30px 61px;
       flex-direction: row;
       justify-content: space-between;
+    }
+
+    @media (min-width: $desktop) {
+      padding: 59px 110px 56px;
     }
   }
 

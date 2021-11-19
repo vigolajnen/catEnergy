@@ -1,9 +1,13 @@
 include ../../mixins/product.pug
 
-ul.catalog__list
-  li.catalog__item
+include ../../mixins/svg_icon.pug
+
+.catalog__list
+  .catalog__item
     +product({
       src: "img/catalog/1-desktop.png",
+      picWidth: "161",
+      picHeight: "172",
       title: "Cat Energy PRO",
       weight: "500",
       list: [
@@ -12,9 +16,11 @@ ul.catalog__list
         {infoName: "Цена", infoVal: "700 Р."},
       ],
     })
-  li.catalog__item
+  .catalog__item
     +product({
       src: "img/catalog/2-desktop.png",
+      picWidth: "172",
+      picHeight: "202",
       title: "Cat Energy PRO",
       weight: "1000",
       list: [
@@ -23,9 +29,11 @@ ul.catalog__list
         {infoName: "Цена", infoVal: "1000 Р."},
       ],
     })
-  li.catalog__item
+  .catalog__item
     +product({
       src: "img/catalog/3-desktop.png",
+      picWidth: "161",
+      picHeight: "172",
       title: "Cat Energy PRO",
       weight: "500",
       list: [
@@ -34,9 +42,11 @@ ul.catalog__list
         {infoName: "Цена", infoVal: "700 Р."},
       ],
     })
-  li.catalog__item
+  .catalog__item
     +product({
       src: "img/catalog/4-desktop.png",
+      picWidth: "172",
+      picHeight: "202",
       title: "Cat Energy PRO",
       weight: "1000",
       list: [
@@ -45,9 +55,11 @@ ul.catalog__list
         {infoName: "Цена", infoVal: "1000 Р."},
       ],
     })
-  li.catalog__item
+  .catalog__item
     +product({
       src: "img/catalog/5-desktop.png",
+      picWidth: "161",
+      picHeight: "172",
       title: "Cat Energy PRO",
       weight: "500",
       list: [
@@ -56,9 +68,11 @@ ul.catalog__list
         {infoName: "Цена", infoVal: "700 Р."},
       ],
     })
-  li.catalog__item
+  .catalog__item
     +product({
       src: "img/catalog/5-desktop.png",
+      picWidth: "172",
+      picHeight: "202",
       title: "Cat Energy PRO",
       weight: "1000",
       list: [
@@ -67,25 +81,23 @@ ul.catalog__list
         {infoName: "Цена", infoVal: "1000 Р."},
       ],
     })
-  li.catalog__item
-    +product({
-      src: "img/catalog/6-desktop.png",
-      title: "Cat Energy PRO",
-      weight: "500",
-      list: [
-        {infoName: "Масса", infoVal: "500 г"},
-        {infoName: "Вкус", infoVal: "Рис"},
-        {infoName: "Цена", infoVal: "700 Р."},
-      ],
-    })
-  li.catalog__item
+  .catalog__item
     +product({
       src: "img/catalog/7-desktop.png",
+      picWidth: "161",
+      picHeight: "172",
       title: "Cat Energy PRO",
-      weight: "1000",
+      weight: "500",
       list: [
-        {infoName: "Масса", infoVal: "1000 г"},
+        {infoName: "Масса", infoVal: "500 г"},
         {infoName: "Вкус", infoVal: "Рис"},
-        {infoName: "Цена", infoVal: "1000 Р."},
+        {infoName: "Цена", infoVal: "700 Р."},
       ],
     })
+  .catalog__item
+    .catalog__more
+      +svg_icon(("../img/sprite.svg"), "icon-plus", "60", "60").catalog__more-icon
+      .catalog__more-title Показать еще 100500 товаров
+      .catalog__more-text На самом деле вкусов гораздо больше!
+
+      a.catalog__more-link(href="#") Показать все
