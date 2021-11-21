@@ -1,6 +1,8 @@
 .page-header {
-  padding-top: 50px;
-  padding-bottom: 30px;
+  @media (min-width: $table) {
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
 
   &__wrapper {
     display: grid;

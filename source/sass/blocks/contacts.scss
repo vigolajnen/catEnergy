@@ -5,10 +5,18 @@
     padding: 95px 0 104px;
   }
 
+  &__wrapper {
+    padding: 0;
+
+    @media (min-width: $table) {
+      padding: 0 30px;
+    }
+  }
+
   &__info {
     z-index: 2;
     position: relative;
-    padding: 28px 0;
+    padding: 28px 20px;
 
     display: flex;
     flex-wrap: wrap;

@@ -1,10 +1,19 @@
 .catalog {
   &__list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 80px;
+    grid-template-columns: 1fr;
+    gap: 40px;
     padding-top: 45px;
     padding-bottom: 45px;
+
+    @media (min-width: $table) {
+      gap: 80px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $desktop) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   &__more {

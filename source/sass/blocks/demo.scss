@@ -11,8 +11,12 @@
 
   &__body {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     background-color: $basic-grey;
+
+    @media (min-width: $table) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__info {

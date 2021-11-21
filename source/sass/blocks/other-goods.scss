@@ -1,10 +1,16 @@
 .other-goods {
   padding-bottom: 40px;
+  overflow: hidden;
 
   &__wrapper {
     display: grid;
-    grid-template-columns: 1fr 245px;
-    gap: 80px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    @media (min-width: $desktop) {
+      gap: 80px;
+      grid-template-columns: 1fr 245px;
+    }
   }
 
   &__title {
@@ -12,27 +18,42 @@
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 70px;
+    padding: 0 20px;
+
+    @media (min-width: $table) {
+      padding: 0 70px;
+    }
 
     &::before {
       content: "";
       z-index: -2;
       position: absolute;
       top: 50%;
-      left: 0;
+      right: -20px;
       transform: translateY(-50%);
       width: 100%;
       height: 2px;
       background-color: $basic-green;
+
+      @media (min-width: $table) {
+        left: 0;
+      }
     }
 
-    & h2 {
+    & h2,
+    & h3 {
       display: inline-block;
-      margin: 0;
-      padding: 30px 35px 40px 40px;
-      font-size: 36px;
+      margin: 0 75px 0 0;
+      padding: 20px;
+      padding-left: 0;
+      @include adaptiv-font(36, 24);
       line-height: 100%;
       background-color: $default-color;
+
+      @media (min-width: $table) {
+        margin: 0;
+        padding: 30px 35px 40px 40px;
+      }
     }
   }
 
@@ -41,8 +62,19 @@
     margin-bottom: 45px;
 
     & tr {
-      border-top: 1px solid #cdcdcd;
-      border-bottom: 1px solid #cdcdcd;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      column-gap: 30px;
+      margin-bottom: -1px;
+      padding: 0 30px;
+      border: 1px solid #cdcdcd;
+
+      @media (min-width: $desktop) {
+        display: table-row;
+        border: none;
+        border-top: 1px solid #cdcdcd;
+        border-bottom: 1px solid #cdcdcd;
+      }
     }
 
     & td {
@@ -51,14 +83,33 @@
       font-size: 16px;
       line-height: 125%;
       color: $special-dark-grey;
+
+      @media (min-width: $table) {
+        text-align: right;
+      }
+
+      @media (min-width: $desktop) {
+        text-align: left;
+      }
     }
 
     & td:first-child {
+      grid-column: 1/-1;
       font-family: $mainFontPrimary;
       font-size: 20px;
       line-height: 100%;
       color: $special-dark-grey-2;
       text-transform: uppercase;
+      text-align: left;
+
+      @media (min-width: $table) {
+        grid-column: 1/2;
+      }
+    }
+    & td:last-child {
+      grid-column: 1/-1;
+      @media (min-width: $desktop) {
+      }
     }
   }
 

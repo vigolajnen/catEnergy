@@ -1,13 +1,25 @@
 .gift {
-  max-width: 245px;
+  max-width: 100%;
   padding: 42px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
   background-color: $basic-green;
   background-image: url("../../img/catalog/gift-photo-desktop.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
   color: $default-color;
-  text-align: center;
+
+  @media (min-width: $table) {
+    flex-direction: row;
+  }
+  @media (min-width: $desktop) {
+    max-width: 245px;
+    flex-direction: column;
+  }
 
   &__icon {
     width: 80px;
@@ -15,11 +27,21 @@
   }
 
   &__text {
+    max-width: 161px;
     font-family: $mainFont;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
     color: inherit;
+    text-align: center;
+
+    @media (min-width: $table) {
+      text-align: left;
+    }
+
+    @media (min-width: $desktop) {
+      text-align: center;
+    }
   }
 }

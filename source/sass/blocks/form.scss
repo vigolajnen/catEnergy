@@ -2,8 +2,10 @@
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
+  overflow: hidden;
 
   &__wrapper {
+    max-width: 100%;
     border: 0;
     padding: 0;
     margin: 0;
@@ -66,7 +68,7 @@
     display: grid;
     grid-template-columns: 1fr;
 
-    @media (min-width: $desktop) {
+    @media (min-width: $table) {
       gap: 80px;
       grid-template-columns: repeat(2, 1fr);
     }
@@ -78,14 +80,15 @@
 
     & li {
       display: grid;
-      grid-template-columns: max-content auto;
+      grid-template-columns: auto 1fr;
       align-items: center;
       margin-bottom: 20px;
       width: 100%;
     }
 
     & input {
-      margin-left: 10%;
+      width: calc(100% - 5%);
+      margin-left: 5%;
       @include field(10px 20px, $special_dark-grey, #e7e7e7);
       @include adaptiv-font(20, 16);
       line-height: 150%;
@@ -104,10 +107,26 @@
     }
 
     & label {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 60px;
+      padding-top: 5px;
+      margin-bottom: 15px;
+      min-height: 40px;
       font-size: 20px;
       line-height: 30px;
       text-transform: uppercase;
       color: $special_dark-grey-2;
+      cursor: pointer;
+    }
+
+    & input:checked + label[for^="theme-"]::before {
+      @include customInputCheck(11px, 18px, 18px, 50%, $basic-green);
+    }
+
+    & label[for^="theme-"]::after {
+      @include customInput(40px, 40px, 1px, 50%, #cdcdcd);
     }
   }
 
@@ -117,7 +136,7 @@
     display: grid;
     grid-template-columns: 1fr;
 
-    @media (min-width: $desktop) {
+    @media (min-width: $table) {
       gap: 80px;
       grid-template-columns: repeat(2, 1fr);
     }
@@ -131,10 +150,27 @@
 
     & input {
       width: 80%;
-      margin-left: 7%;
-      @include field(10px 20px, $special_dark-grey, #e7e7e7);
+      margin-left: 3%;
+
+      @include field(10px 45px 10px 20px, $special_dark-grey, #e7e7e7);
       @include adaptiv-font(20, 16);
       line-height: 150%;
+
+      @media (min-width: $table) {
+        margin-left: 7%;
+      }
+    }
+
+    & input[type="email"] {
+      background: url("../img/icons/icon-email.svg") no-repeat;
+      background-position: calc(100% - 20px) 50%;
+      background-size: auto;
+    }
+
+    & input[type="tel"] {
+      background: url("../img/icons/icon-phone.svg") no-repeat;
+      background-position: calc(100% - 20px) 50%;
+      background-size: auto;
     }
   }
 
@@ -162,23 +198,48 @@
     @media (min-width: $desktop) {
       grid-template-columns: repeat(4, 1fr);
     }
+
+    & label {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 60px;
+      padding-top: 5px;
+      margin-bottom: 15px;
+      min-height: 40px;
+      font-size: 20px;
+      line-height: 30px;
+      text-transform: uppercase;
+      color: $special_dark-grey-2;
+      cursor: pointer;
+    }
+
+    & input:checked + label[for^="info-"]::before {
+      @include customInputCheck(11px, 18px, 18px, 0, transparent);
+      background-image: url("../img/icons/icon-check.svg");
+      background-repeat: no-repeat;
+      background-position: 0 0;
+    }
+
+    & label[for^="info-"]::after {
+      @include customInput(40px, 40px, 1px, 0, #cdcdcd);
+    }
   }
 
   &__footer {
-    padding-top: 30px;
-    padding-bottom: 80px;
-
     display: grid;
     grid-template-columns: 1fr;
 
-
-    @media (min-width: $desktop) {
+    @media (min-width: $table) {
+      padding-top: 30px;
+      padding-bottom: 80px;
       gap: 80px;
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
   & button[type="submit"] {
+    margin-bottom: 20px;
     @include Button(13px, 0, $default-color, $basic-green);
     text-transform: uppercase;
   }

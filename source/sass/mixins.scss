@@ -68,3 +68,31 @@
     #{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth})
   );
 }
+
+@mixin customInputCheck($left, $width, $height, $radius, $bgcolor) {
+  content: "";
+  position: absolute;
+  left: $left;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: $radius;
+  width: $width;
+  height: $height;
+  background-color: $bgcolor;
+}
+
+@mixin customInput($width, $height, $brwidth, $radius, $brcolor) {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: $radius;
+  background: 0 0;
+
+  width: $width;
+  height: $height;
+  border-width: $brwidth;
+  border-color: $brcolor;
+  border-style: solid;
+}
