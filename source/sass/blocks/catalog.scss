@@ -6,7 +6,7 @@
     padding-top: 45px;
     padding-bottom: 45px;
 
-    @media (min-width: $table) {
+    @media (min-width: $mobile) {
       gap: 80px;
       grid-template-columns: repeat(2, 1fr);
     }
@@ -25,6 +25,7 @@
     padding: 40px;
     padding-top: 50px;
     height: calc(100% - 80px);
+    max-width: 324px;
     text-align: center;
     border: 2px solid $basic-grey;
   }

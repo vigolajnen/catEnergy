@@ -7,7 +7,7 @@
     grid-template-columns: 1fr;
     gap: 30px;
 
-    @media (min-width: $desktop) {
+    @media (min-width: 960px) {
       grid-template-columns: repeat(2, 1fr);
       gap: 80px;
     }
@@ -33,7 +33,7 @@
         "link icon";
     }
 
-    @media (min-width: $desktop) {
+    @media (min-width: 960px) {
       column-gap: 62px;
 
       grid-template-areas:
@@ -53,7 +53,7 @@
       width: 200px;
       height: 200px;
     }
-    @media (min-width: $desktop) {
+    @media (min-width: 960px) {
       width: 50px;
       height: 53px;
     }
@@ -67,7 +67,7 @@
       width: 200px;
       height: 200px;
     }
-    @media (min-width: $desktop) {
+    @media (min-width: 960px) {
       width: 67px;
       height: 50px;
     }

@@ -4,21 +4,49 @@
 
   &__wrapper {
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    background-color: $basic-grey;
+    display: grid;
 
-    padding: 160px 37px 40px;
+    grid-template-columns: auto 1fr 1fr;
+    column-gap: 36px;
+
+    grid-template-areas:
+      "pic title title"
+      "pic info info"
+      "btn btn btn";
+
+    padding: 30px;
+    border-top: 1px solid $basic-grey;
+    border-bottom: 1px solid $basic-grey;
+
+    @media (min-width: $mobile) {
+      grid-template-columns: 1fr;
+
+      grid-template-areas:
+      "pic"
+      "title"
+      "info"
+      "btn";
+
+      padding: 160px 37px 40px;
+      background-color: $basic-grey;
+      border: none;
+    }
   }
 
   &__title {
+    grid-area: title;
     margin: 0;
-    font-size: 20px;
-    line-height: 105%;
+    font-size: 16px;
+    line-height: 125%;
     color: $special-dark-grey-2;
-    text-align: center;
+
     text-transform: uppercase;
+
+    @media (min-width: $mobile) {
+      font-size: 20px;
+      line-height: 105%;
+      text-align: center;
+    }
 
     & span {
       display: block;
@@ -26,24 +54,43 @@
   }
 
   &__pic {
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 160px;
-    height: 170px;
+    grid-area: pic;
+    padding-top: 15px;
+    width: 68px;
+    height: 86px;
+
+    @media (min-width: $mobile) {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 160px;
+      height: 170px;
+      padding: 0;
+    }
 
     &--1000 {
-      top: -80px;
-      width: 170px;
-      height: 200px;
+      width: 68px;
+      height: 86px;
+
+      @media (min-width: $mobile) {
+        // bottom: 80px;
+        width: 170px;
+        height: 200px;
+      }
     }
   }
 
   &__info {
+    grid-area: info;
     margin: 0;
-    padding-top: 20px;
-    padding-bottom: 30px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+
+    @media (min-width: $mobile) {
+      padding-top: 20px;
+      padding-bottom: 30px;
+    }
   }
 
   &__info-item {
@@ -52,16 +99,20 @@
     justify-content: space-between;
     align-items: center;
 
-    padding: 5px 0;
-
     font-family: $mainFont;
-    font-size: 16px;
-    line-height: 100%;
+    font-size: 12px;
+    line-height: 133%;
 
-    border-bottom: 1px solid #cdcdcd;
+    @media (min-width: $mobile) {
+      padding: 5px 0;
+      font-size: 16px;
+      line-height: 100%;
+      border-bottom: 1px solid #cdcdcd;
+    }
   }
 
   &__button {
+    grid-area: btn;
     @include Button(10px, 0, $default-color, $basic-green);
     font-size: 16px;
     line-height: 125%;

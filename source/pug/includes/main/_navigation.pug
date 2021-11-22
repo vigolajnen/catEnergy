@@ -4,7 +4,24 @@ include ../../mixins/picture.pug
 nav.navigation(class=(url == 'index' ? 'navigation--promo' : ''))
   .navigation__header
     a.navigation__logo(href="#")
-      img(src="img/logo-mobile.svg" alt="Логотип компании")
+      +picture({
+        list: [
+          {
+            media: "min-width: 767px",
+            srcset: "../../../img/logo-tablet.svg"
+          },
+          {
+            media: "min-width: 1200px",
+            srcset: "../../../img/logo.svg"
+          },
+        ],
+        src: "img/logo-mobile.svg",
+        srcset: "img/logo-mobile.svg",
+        alt: "Логотип компании",
+        width: "35",
+        height: "38"
+      })
+      //- img(src="img/logo-mobile.svg" alt="Логотип компании")
     +svg_icon(("../img/sprite.svg"), "icon-logo-text", "101", "18").navigation__logo-text
     button(class="navigation__toggle navigation__toggle--closed" type="button" aria-label="Открыть меню")
       //- +svg_icon(("../img/sprite.svg"), "icon-menu", "24", "18").icon
