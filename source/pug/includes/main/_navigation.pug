@@ -7,35 +7,28 @@ nav.navigation(class=(url == 'index' ? 'navigation--promo' : ''))
       +picture({
         list: [
           {
-            media: "min-width: 767px",
-            srcset: "../../../img/logo-tablet.svg"
+            media: "(min-width: 1200px)",
+            srcset: "img/logo/logo.svg"
           },
           {
-            media: "min-width: 1200px",
-            srcset: "../../../img/logo.svg"
+            media: "(min-width: 768px)",
+            srcset: "img/logo/logo-tablet.svg"
           },
+
         ],
-        src: "img/logo-mobile.svg",
-        srcset: "img/logo-mobile.svg",
+        src: "img/logo/logo-mobile.svg",
         alt: "Логотип компании",
         width: "35",
         height: "38"
       })
-      //- img(src="img/logo-mobile.svg" alt="Логотип компании")
     +svg_icon(("../img/sprite.svg"), "icon-logo-text", "101", "18").navigation__logo-text
     button(class="navigation__toggle navigation__toggle--closed" type="button" aria-label="Открыть меню")
-      //- +svg_icon(("../img/sprite.svg"), "icon-menu", "24", "18").icon
       svg(class="navigation__icon" width="25" viewbox="0 0 10 10")
         rect(class="navigation__line navigation__line--1" width="10" height="1" x="0" y="0")
         rect(class="navigation__line navigation__line--2" width="10" height="1" x="0" y="3")
         rect(class="navigation__line navigation__line--3" width="10" height="1" x="0" y="6")
-  .navigation__inner
-    ul.navigation__list
-      - var i = 1;
-      each value, index in { 'Главная': 'index', 'Каталог продукции': 'catalog', 'Подбор программы': 'form'}
-        if i == 1
-          li.navigation__item.navigation__item--active
-            a.navigation__link(href= "/" + value + ".html")= index
-        else
-          li.navigation__item
-            a.navigation__link(href= "/" + value + ".html")= index
+  ul.navigation__list
+    - var itemActive = true;
+    each value, index in { 'Главная': 'index', 'Каталог продукции': 'catalog', 'Подбор программы': 'form'}
+      li.navigation__item(class=(url == value ? 'navigation__item--active' : ''))
+        a.navigation__link(href= "/" + value + ".html")= index

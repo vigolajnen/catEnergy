@@ -5,10 +5,14 @@
     padding: 95px 0 104px;
   }
 
+  &--info-bg .contacts__info {
+    background-color: $default-color;
+  }
+
   &__wrapper {
     padding: 0;
 
-    @media (min-width: $table) {
+    @media (min-width: $desktop) {
       padding: 0 30px;
     }
   }
@@ -20,15 +24,17 @@
 
     display: flex;
     flex-wrap: wrap;
-    background-color: $default-color;
+
     color: $special-dark-grey;
 
     @media (min-width: $table) {
       padding: 60px 40px 60px;
+
     }
     @media (min-width: $desktop) {
       padding: 60px 75px 50px;
       max-width: 570px;
+      background-color: $default-color;
     }
   }
 

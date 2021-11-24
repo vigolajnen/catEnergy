@@ -6,7 +6,7 @@
   color: $text-color;
   background: $default-color;
 
-  @media (min-width: $table) {
+  @media (min-width: $mobile) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -27,9 +27,38 @@
     width: 100%;
     padding: 15px 20px;
 
-    @media (min-width: $table) {
+    @media (min-width: $mobile) {
       width: auto;
     }
+  }
+
+  &__logo {
+    width: 34px;
+    height: 38px;
+
+    &:focus,
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+
+    @media (min-width: $table) {
+      width: 174px;
+      height: 52px;
+    }
+
+    @media (min-width: $desktop) {
+      width: 202px;
+      height: 60px;
+    }
+  }
+
+  &__logo img {
+    width: 100%;
+    height: 100%;
   }
 
   &__logo-text {
@@ -55,7 +84,7 @@
     background-color: transparent;
     cursor: pointer;
 
-    @media (max-width: $table) {
+    @media (max-width: 599px) {
       display: block;
     }
 
@@ -100,12 +129,21 @@
     }
   }
 
-  &__inner {
-    display: flex;
-    box-sizing: border-box;
+  &__list {
+    @include ListReset();
+    display: none;
 
-    @media (max-width: $table) {
-      display: none;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    @media (min-width: $mobile) {
+      width: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
     }
 
     &--active {
@@ -123,26 +161,14 @@
     }
   }
 
-  &__list {
-    @include ListReset();
-
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-
-    @media (min-width: $table) {
-      flex-direction: row;
-      justify-content: start;
-    }
-  }
-
   &__item {
     width: 100%;
     text-align: center;
     margin-bottom: -1px;
+
+    @media (min-width: $mobile) {
+      width: auto;
+    }
 
     @media (min-width: $table) {
       width: auto;
@@ -155,7 +181,14 @@
     }
   }
 
+  &__item--active .navigation__link::before {
+    @media (min-width: $mobile) {
+      background-color: $basic-green;
+    }
+  }
+
   &__link {
+    position: relative;
     display: block;
     font-family: $mainFontPrimary;
     font-size: 20px;
@@ -171,7 +204,27 @@
     border-top: 1px solid #e6e6e6;
     border-bottom: 1px solid #e6e6e6;
 
-    @media (min-width: $table) {
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 14px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: transparent;
+    }
+
+    &:focus,
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:active::before {
+      background-color: $basic-green;
+    }
+
+    @media (min-width: $mobile) {
+      padding: 22px 0 22px 10px;
       font-size: 18px;
       @include adaptiv-font(20, 18);
       line-height: 24px;
@@ -182,6 +235,7 @@
     }
 
     @media (min-width: $desktop) {
+      padding: 22px 0;
       font-size: 20px;
       line-height: 30px;
     }
@@ -189,6 +243,17 @@
 }
 
 .navigation--promo {
+  & .navigation__item--active .navigation__link::before {
+    @media (min-width: $mobile) {
+      background-color: $default-color;
+    }
+  }
+  & .navigation__item--active .navigation__link:active::before {
+    @media (min-width: $mobile) {
+      background-color: $default-color;
+    }
+  }
+
   & .navigation__link {
     @media (min-width: $desktop) {
       color: $default-color;

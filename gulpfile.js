@@ -57,6 +57,15 @@ const scripts = () => {
 };
 exports.scripts = scripts;
 
+const lisbJs = () => {
+  return gulp
+    .src("node_modules/picturefill/dist/picturefill.js")
+    .pipe(terser())
+    .pipe(rename("libs.min.js"))
+    .pipe(gulp.dest("build/js"))
+    .pipe(sync.stream());
+};
+
 const optimizeImages = () => {
   return gulp
     .src("source/img/**/*.{png,jpg,svg}")

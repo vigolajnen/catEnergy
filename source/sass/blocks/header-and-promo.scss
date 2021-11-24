@@ -2,10 +2,14 @@
   position: relative;
 
   &__header {
-    z-index: 2;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
+
+    @media (min-width: $mobile) {
+      z-index: 2;
+      position: absolute;
+    }
   }
 }

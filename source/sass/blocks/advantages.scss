@@ -88,6 +88,7 @@
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: contain;
+    background-color: $basic-green;
 
     @media (min-width: $table) {
       width: 80px;
