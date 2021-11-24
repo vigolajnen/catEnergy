@@ -1,6 +1,6 @@
 mixin picture(data={})
   picture
     each source in data.list
-      source(media=source.media, srcset=source.srcset)
+      source(type=data.type, media=source.media, srcset=source.srcset)
     //- 1x: data.width; 2x: 2*data.width
     img(src=data.src, srcset=data.srcset, alt=data.alt, width=data.width, height=data.height)

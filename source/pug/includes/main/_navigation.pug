@@ -4,6 +4,7 @@ include ../../mixins/picture.pug
 nav.navigation(class=(url == 'index' ? 'navigation--promo' : ''))
   .navigation__header
     a.navigation__logo(href="#")
+      //- img(src="img/logo/logo-adaptive.svg", alt="Логотип компании" width="202" height="59")
       +picture({
         list: [
           {

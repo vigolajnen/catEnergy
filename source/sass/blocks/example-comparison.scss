@@ -1,0 +1,135 @@
+.example-comparison {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 520px;
+  overflow: hidden;
+  margin: 0 auto;
+
+  @media (min-width: $mobile) {
+    top: -18%;
+  }
+
+  &__item {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  &__item--new {
+    display: none;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 520px;
+    height: 100%;
+  }
+
+  &__before {
+    position: absolute;
+    width: 50%;
+    overflow: hidden;
+  }
+}
+
+.range-controls {
+  position: relative;
+
+  padding: 20px 40px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+
+  &::before,
+  &::after {
+    content: "было";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    padding-bottom: 2px;
+
+    font-size: 16px;
+    line-height: 125%;
+    color: #000000;
+    text-transform: uppercase;
+
+    @media (min-width: $table) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  &::after {
+    content: "стало";
+    left: auto;
+    right: 0;
+  }
+
+  & .scale {
+    height: 14px;
+    background: $default-color;
+    border-radius: 6px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    border: 1px solid #cdcdcd;
+
+    @media (min-width: $table) {
+      height: 6px;
+      background: #dcdcdc;
+      border-radius: 6px;
+      width: calc(100% - 40px);
+      margin: 0 auto;
+    }
+  }
+
+  & .bar {
+    width: 40%;
+    height: 6px;
+    margin: 3px;
+
+    background: #68b738;
+    border-radius: 6px;
+
+    @media (min-width: $table) {
+      display: none;
+    }
+  }
+
+  & .toggle {
+    @media (min-width: $table) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      background: #ffffff;
+      border: 1px solid #cdcdcd;
+      border-radius: 50%;
+      box-shadow: 0 2px 1px 0 #cfcfcf;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 8px;
+        height: 8px;
+        background-color: $basic-green;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  & button {
+    @include BtnReset();
+    font-size: 16px;
+    line-height: 125%;
+    color: #000000;
+    text-transform: uppercase;
+  }
+}

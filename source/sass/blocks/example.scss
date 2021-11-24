@@ -1,0 +1,188 @@
+.example {
+  position: relative;
+  padding: 70px 30px 0;
+  background-color: $basic-grey;
+
+  @media (min-width: $table) {
+    padding: 70px 0 0;
+    background-color: $default-color;
+  }
+
+  &__wrapper {
+    padding: 0;
+
+    @media (min-width: $table) {
+      padding: 0 30px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    font-size: 60px;
+    line-height: 100%;
+
+    font-size: 36px;
+    line-height: 111%;
+
+    @media (min-width: $table) {
+      margin-bottom: 35px;
+      font-size: 60px;
+      line-height: 100%;
+    }
+
+    @media (min-width: $table3) {
+      margin-bottom: 75px;
+    }
+  }
+
+  &__body {
+    background-color: $basic-grey;
+  }
+
+  &__body .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0;
+    padding-bottom: 30px;
+
+    @media (min-width: $table3) {
+      padding: 0 30px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $desktop) {
+      padding: 0 110px;
+    }
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+
+    padding: 30px 0;
+    padding-bottom: 30px;
+    width: 100%;
+
+    @media (min-width: $mobile) {
+      padding-bottom: 150px;
+    }
+
+    @media (min-width: $table) {
+      padding-left: 30px;
+      padding-right: 30px;
+      grid-template-columns: 1fr 174px;
+      background-color: $default-color;
+    }
+
+    @media (min-width: $table3) {
+      grid-template-columns: 1fr;
+      padding-top: 70px;
+      padding-bottom: 68px;
+      max-width: 440px;
+      background-color: transparent;
+    }
+  }
+
+  &__text {
+    grid-column: 1/-1;
+    margin: 0;
+    margin-bottom: 70px;
+    font-family: $mainFont;
+    font-size: 16px;
+    line-height: 150%;
+    color: $special-dark-grey;
+  }
+
+  &__data {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 32px;
+    justify-content: center;
+
+    margin-bottom: 40px;
+
+    @media (min-width: $table) {
+      gap: 42px;
+      justify-content: flex-start;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $table3) {
+      margin-bottom: 47px;
+    }
+  }
+
+  &__data-item {
+    position: relative;
+    padding: 15px 20px;
+    min-width: 124px;
+    font-size: 24px;
+    line-height: 100%;
+    color: $basic-black;
+    text-align: center;
+
+    border: 1px solid $special-grey;
+    border-radius: 3px;
+
+    @media (min-width: $table) {
+      padding: 15px 30px 20px;
+      min-width: 162px;
+      font-size: 30px;
+      line-height: 123%;
+    }
+
+    & span {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0 8px;
+
+      background-color: $basic-grey;
+      font-family: $mainFont;
+      font-size: 14px;
+      line-height: 100%;
+      color: $special-dark-grey;
+      text-align: center;
+      position: absolute;
+
+      @media (min-width: $table) {
+        bottom: -7px;
+        background-color: $default-color;
+        white-space: nowrap;
+      }
+      @media (min-width: $table3) {
+        background-color: $basic-grey;
+      }
+    }
+  }
+
+  &__cost {
+    margin: 0;
+    font-size: 20px;
+    line-height: 100%;
+    color: $basic-black;
+    text-transform: uppercase;
+    text-align: center;
+
+    @media (min-width: $table) {
+      text-align: right;
+    }
+
+    @media (min-width: $table3) {
+      text-align: left;
+    }
+
+    & span {
+      display: block;
+
+      @media (min-width: $table) {
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 63px;
+      }
+    }
+  }
+}
