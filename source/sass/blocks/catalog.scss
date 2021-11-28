@@ -5,14 +5,24 @@
     gap: 40px;
     padding-top: 45px;
     padding-bottom: 45px;
+    transition: $transition-base;
 
     @media (min-width: $mobile) {
       gap: 80px;
       grid-template-columns: repeat(2, 1fr);
     }
 
+    @media (min-width: $table) {
+      gap: 40px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
     @media (min-width: $desktop) {
       grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (min-width: $maxWidth) {
+      gap: 80px;
     }
   }
 
@@ -57,5 +67,14 @@
     @include Link(10px, $special-dark-grey, $basic-grey);
     font-size: 16px;
     line-height: 100%;
+
+    &:focus,
+    &:hover {
+      background-color: #ebebeb;
+    }
+
+    &:active {
+      opacity: $opacity-base;
+    }
   }
 }

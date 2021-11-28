@@ -40,6 +40,7 @@
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  transition: $transition-base;
 }
 
 @mixin field($padding, $color: $special_dark-grey, $brcolor) {

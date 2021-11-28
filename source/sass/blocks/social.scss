@@ -14,6 +14,20 @@
     margin-right: 0;
   }
 
+  &__link svg {
+    fill: $special-grey-2;
+    stroke-width: 0;
+
+    &:focus,
+    &:hover {
+      fill: $basic-green;
+    }
+
+    &:active {
+      opacity: $opacity-base;
+    }
+  }
+
   &__link--vk {
     width: 28px;
     height: 20px;
@@ -31,6 +45,14 @@
 
   &__link--fb svg {
     fill: none;
+    stroke: $special-dark-grey-2;
+    stroke-width: 1px;
+
+    &:focus,
+    &:hover {
+      fill: none;
+      stroke: $basic-green;
+    }
   }
 
 }

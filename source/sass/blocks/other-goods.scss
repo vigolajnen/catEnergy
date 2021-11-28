@@ -119,6 +119,15 @@
     font-size: 16px;
     line-height: 125%;
     text-transform: uppercase;
+
+    &:focus,
+    &:hover {
+      background-color: $basic-dark-green;
+    }
+
+    &:active {
+      opacity: $opacity-base;
+    }
   }
 
   &__gift {

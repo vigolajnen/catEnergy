@@ -47,3 +47,19 @@
     }
   }
 }
+
+.page-footer__item {
+  & .logo-html,
+  & .logo-html {
+    fill: $special-grey-2;
+  }
+
+  &:focus .logo-html,
+  &:hover .logo-html {
+    fill: $basic-green;
+  }
+
+  &:active {
+    opacity: $opacity-base;
+  }
+}

@@ -1,10 +1,11 @@
 //- form
-
 extends ./layouts/layout-inner.pug
 block variables
   - var title = 'Подбор программы'
 
 block content
+
+  include ./mixins/svg_icon.pug
   main.page-form
     .container
       h1.page__title #{title}
@@ -44,10 +45,11 @@ block content
           li
             label(for="form-email") E-mail:*
             input(type="email" id="form-email" name="form-email" placeholder="кuklachev@gmail.com" required)
+            +svg_icon(("img/sprite.svg"), "icon-email", "19", "14")
           li
             label(for="form-phone") Телефон:*
             input(type="tel" id="form-phone" name="form-phone" placeholder="8 (960) 900-60-90" required)
-
+            +svg_icon(("img/sprite.svg"), "icon-phone", "20", "20")
       fieldset.form__wrapper
         legend.form__title
           h3 Комментарий

@@ -67,14 +67,16 @@
     position: relative;
     display: grid;
     grid-template-columns: 1fr;
+    transition: $transition-base;
 
-    @media (min-width: $desktop) {
+    @media (min-width: $table) {
       grid-template-columns: 1fr 63%;
     }
   }
 
   &__info {
     max-width: 415px;
+    margin: 0 auto;
     text-align: center;
     // background-color: $basic-green;
     color: $default-color;
@@ -116,6 +118,15 @@
     line-height: 20px;
     @include Link(14px 26px, $default-color, $basic-green);
 
+    &:focus,
+    &:hover {
+      background-color: $basic-dark-green;
+    }
+
+    &:active {
+      opacity: $opacity-base;
+    }
+
     @media (min-width: $mobile) {
       position: relative;
       width: auto;
@@ -125,8 +136,10 @@
   }
 
   &__pic {
-    width: 280px;
-    height: 270px;
+    max-width: 280px;
+    max-height: 270px;
+    width: 100%;
+    margin: 0 auto;
     margin-bottom: 60px;
 
     @media (min-width: $mobile) {
@@ -138,11 +151,14 @@
     }
 
     @media (min-width: $table) {
-      width: 709px;
-      height: 609px;
+      max-width: 709px;
+      max-height: 609px;
+      width: 63%;
+      margin: 0;
     }
 
     @media (min-width: $desktop) {
+      margin: auto;
       margin-top: 0;
       z-index: 0;
       text-align: left;
