@@ -27,5 +27,5 @@ jobs:
       # Deploy
       - run: |
           git remote set-url origin https://git@github.com/${GITHUB_REPOSITORY}.git
-          npm run deploy -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no"
+          npm run deploy
       
