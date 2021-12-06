@@ -36,7 +36,7 @@
     "start": "gulp default",
     "webp": "gulp webp",
     "sprite": "gulp sprite",
-    "deploy": "gulp build && gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "browserslist": [
     "last 2 versions",
