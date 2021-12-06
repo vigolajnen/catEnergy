@@ -25,6 +25,6 @@ jobs:
       - run: npm ci
       - run: npm run build
       # Deploy
-      - run: |
-          git remote set-url origin https://git@github.com/${GITHUB_REPOSITORY}.git
+      - run: git remote set-url origin https://git@github.com/${GITHUB_REPOSITORY}.git
+      - run: npm run deploy
       
