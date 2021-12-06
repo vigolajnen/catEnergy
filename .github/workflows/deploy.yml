@@ -25,6 +25,8 @@ jobs:
       - run: npm ci
       - run: npm run build
       # Deploy
-      - run: git remote set-url origin https://git@github.com/${GITHUB_REPOSITORY}.git
-      - run: npm run deploy
+      - run: |
+          git remote set-url origin https://git@github.com/${GITHUB_REPOSITORY}.git
+          npx gh-pages -d build -u "Anya Vigolajnen <vigolajnen@gmail.com>"
+
       
