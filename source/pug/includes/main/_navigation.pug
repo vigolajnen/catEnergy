@@ -1,9 +1,9 @@
 include ../../mixins/svg_icon.pug
 include ../../mixins/picture.pug
 
-nav.navigation(class=(url == 'index' ? 'navigation--promo' : ''))
+nav.navigation(class=(url == 'main' ? 'navigation--promo' : ''))
   .navigation__header
-    a.navigation__logo(href="#")
+    a.navigation__logo.logo(href=(href == 'main' ? '#' : 'main.html'))
       //- img(src="img/logo/logo-adaptive.svg", alt="Логотип компании" width="202" height="59")
       +picture({
         list: [
@@ -29,7 +29,13 @@ nav.navigation(class=(url == 'index' ? 'navigation--promo' : ''))
         rect(class="navigation__line navigation__line--2" width="10" height="1" x="0" y="3")
         rect(class="navigation__line navigation__line--3" width="10" height="1" x="0" y="6")
   ul.navigation__list
-    - var itemActive = true;
-    each value, index in { 'Главная': 'index', 'Каталог продукции': 'catalog', 'Подбор программы': 'form'}
-      li.navigation__item(class=(url == value ? 'navigation__item--active' : ''))
-        a.navigation__link(href= "/" + value + ".html")= index
+    li.navigation__item.navigation__item--active
+      a.navigation__link(href="main.html") Главная
+    li.navigation__item
+      a.navigation__link(href="catalog.html") Каталог продукции
+    li.navigation__item
+      a.navigation__link(href="form.html") Подбор программы
+    //- - var itemActive = true;
+    //- each value, index in { 'Главная': 'index', 'Каталог продукции': 'catalog', 'Подбор программы': 'form'}
+    //-   li.navigation__item(class=(url == value ? 'navigation__item--active' : ''))
+    //-     a.navigation__link(href= "../" + value + ".html")= index

@@ -1,0 +1,35 @@
+include ../mixins/svg_icon.pug
+include ../mixins/picture.pug
+
+//- index.pug
+block variables
+
+doctype html
+html.page(lang="ru")
+  include ../includes/main/_head.pug
+
+  body.page-body
+    header.page-header.container
+      a.logo(href="#")
+        +picture({
+          list: [
+            {
+              media: "(min-width: 1200px)",
+              srcset: "img/logo/logo.svg"
+            },
+            {
+              media: "(min-width: 768px)",
+              srcset: "img/logo/logo-tablet.svg"
+            },
+
+          ],
+          src: "img/logo/logo-mobile.svg",
+          alt: "Логотип компании",
+          width: "35",
+          height: "38"
+        })
+
+    main.container
+      block content
+
+    include ../includes/footer/_footer-index.pug

@@ -1,0 +1,11 @@
+//- index.pug
+
+extends ./layouts/layout.pug
+block variables
+  - var title = 'Главная страница'
+  - var url = 'main'
+
+block content
+  include includes/main/_programs.pug
+  include includes/main/_advantages.pug
+  include includes/main/_example.pug

@@ -1,11 +1,16 @@
 //- index.pug
 
-extends ./layouts/layout.pug
+extends ./layouts/layout-index.pug
 block variables
-  - var title = 'Главная страница'
+  - var title = 'Список страниц'
   - var url = 'index'
 
 block content
-  include includes/main/_programs.pug
-  include includes/main/_advantages.pug
-  include includes/main/_example.pug
+  h1 Список страниц
+  ul
+    li
+      a(href="main.html") Главная
+    li
+      a(href="catalog.html") Каталог продукции
+    li
+      a(href="form.html") Подбор программы
