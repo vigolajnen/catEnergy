@@ -1,9 +1,0 @@
-mixin table(data = {})
-  table(class=data.class)
-    each item in data.items
-      tr
-        td=item.title
-        td=item.count
-        td=item.price
-        td
-          button(type="button", class=data.classBtn) Заказать
