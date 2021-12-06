@@ -18,6 +18,7 @@ const del = require("del");
 const terser = require("gulp-terser");
 const concat = require("gulp-concat");
 const sync = require("browser-sync").create();
+const ghPages = require("gulp-gh-pages");
 
 const styles = () => {
   return gulp
@@ -34,6 +35,12 @@ const styles = () => {
     .pipe(sync.stream());
 };
 exports.styles = styles;
+
+
+const deploy = () => {
+  return gulp.src("./build/**/*").pipe(ghPages());
+}
+exports.deploy = deploy;
 
 const htmlPug = () => {
   return gulp
