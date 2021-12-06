@@ -87,9 +87,6 @@ img {
 .page-header__nav {
   margin-left: auto;
 }
-.page-header__logo {
-  max-width: 200px;
-}
 
 .page-body {
   position: relative;
@@ -538,6 +535,7 @@ img {
 }
 
 .logo {
+  display: block;
   width: 34px;
   height: 38px;
 }
