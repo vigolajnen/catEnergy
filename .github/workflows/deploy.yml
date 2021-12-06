@@ -27,5 +27,5 @@ jobs:
       # Deploy
       - run: |
           git remote set-url origin https://git:"${{ secrets.key }}"@github.com/${GITHUB_REPOSITORY}.git
-          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+          npm run deploy
       
