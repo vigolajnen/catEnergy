@@ -4,7 +4,7 @@
   background-color: $basic-grey;
 
   @media (min-width: $table) {
-    padding: 70px 0 0;
+    padding: 30px 0 0;
     background-color: $default-color;
   }
 
@@ -90,6 +90,8 @@
 
     @media (min-width: $desktop) {
       padding-left: 0;
+      max-width: 431px;
+      padding-right: 0;
     }
   }
 

@@ -2,6 +2,11 @@
   padding-top: 27px;
   padding-bottom: 22px;
 
+  @media (min-width: $desktop) {
+    padding-top: 35px;
+    padding-bottom: 30px;
+  }
+
   &__title {
     margin: 0;
     margin-bottom: 40px;
@@ -12,6 +17,10 @@
     @media (min-width: $table) {
       font-size: 60px;
       line-height: 60px;
+    }
+
+    @media (min-width: $desktop) {
+      margin-bottom: 75px;
     }
   }
 
@@ -26,12 +35,11 @@
 
     @media (min-width: $mobile) {
       grid-template-columns: repeat(2, 1fr);
-      gap: 95px;
+      gap: 80px;
     }
 
     @media (min-width: $desktop) {
       grid-template-columns: repeat(4, 1fr);
-      gap: 95px;
     }
   }
 
@@ -74,6 +82,10 @@
       font-size: 280px;
       line-height: 280px;
       color: $basic-grey;
+    }
+
+    @media (min-width: $desktop) {
+      top: -40px;
     }
   }
 
