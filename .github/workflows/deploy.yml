@@ -25,4 +25,4 @@ jobs:
       - run: npm ci
       - run: npm run build
       # Deploy
-      - run: gulp build && gh-pages -d build "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no"
+      - run: gh-pages -d build
