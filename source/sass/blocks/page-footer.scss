@@ -48,18 +48,15 @@
   }
 }
 
-.page-footer__item {
-  & .logo-html,
-  & .logo-html {
-    fill: $special-grey-2;
-  }
+.page-footer__item .logo-html {
+  fill: $special-grey-2;
+}
 
-  &:focus .logo-html,
-  &:hover .logo-html {
-    fill: $basic-green;
-  }
+.page-footer__item:focus .logo-html,
+.page-footer__item:hover .logo-html {
+  fill: $basic-green;
+}
 
-  &:active {
-    opacity: $opacity-base;
-  }
+.page-footer__item:active {
+  opacity: $opacity-base;
 }

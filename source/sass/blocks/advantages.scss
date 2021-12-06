@@ -12,6 +12,7 @@
     margin-bottom: 40px;
     font-size: 36px;
     line-height: 40px;
+
     @include adaptiv-font(60, 36);
 
     @media (min-width: $table) {
@@ -114,9 +115,11 @@
   &__item--icon-2::after {
     background-image: url("../img/icons/icon-2.svg");
   }
+
   &__item--icon-3::after {
     background-image: url("../img/icons/icon-3.svg");
   }
+
   &__item--icon-4::after {
     background-image: url("../img/icons/icon-4.svg");
   }

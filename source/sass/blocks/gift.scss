@@ -30,6 +30,7 @@
   @media (min-width: $table) {
     flex-direction: row;
   }
+
   @media (min-width: $desktop) {
     max-width: 245px;
     flex-direction: column;

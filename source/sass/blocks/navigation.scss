@@ -58,46 +58,6 @@
     @media (max-width: 599px) {
       display: block;
     }
-
-    &--closed {
-      & .navigation__icon {
-        fill: $basic-black;
-      }
-
-      & .navigation__line {
-        &--1 {
-          transform: rotate(0deg) translate(0%, 0%);
-        }
-
-        &--2 {
-          opacity: 1;
-        }
-
-        &--3 {
-          transform: rotate(0deg) translate(0%, 0%);
-        }
-      }
-    }
-
-    &--opened {
-      & .navigation__icon {
-        fill: $basic-black;
-      }
-
-      & .navigation__line {
-        &--1 {
-          transform: rotate(45deg) translate(20%, -5%);
-        }
-
-        &--2 {
-          opacity: 0;
-        }
-
-        &--3 {
-          transform: rotate(-45deg) translate(-50%, 5%);
-        }
-      }
-    }
   }
 
   &__list {
@@ -163,7 +123,9 @@
     display: block;
     font-family: $mainFontPrimary;
     font-size: 20px;
+
     @include adaptiv-font(18, 20);
+
     line-height: 20px;
     font-style: normal;
     font-weight: 500;
@@ -197,7 +159,9 @@
     @media (min-width: $mobile) {
       padding: 22px 0 22px 10px;
       font-size: 18px;
+
       @include adaptiv-font(20, 18);
+
       line-height: 24px;
       font-style: normal;
       font-weight: normal;
@@ -219,6 +183,7 @@
       background-color: $default-color;
     }
   }
+
   & .navigation__item--active .navigation__link:active::before {
     @media (min-width: $mobile) {
       background-color: $default-color;
@@ -228,6 +193,46 @@
   & .navigation__link {
     @media (min-width: $desktop) {
       color: $default-color;
+    }
+  }
+}
+
+.navigation__toggle--closed {
+  & .navigation__icon {
+    fill: $basic-black;
+  }
+
+  & .navigation__line {
+    &--1 {
+      transform: rotate(0deg) translate(0%, 0%);
+    }
+
+    &--2 {
+      opacity: 1;
+    }
+
+    &--3 {
+      transform: rotate(0deg) translate(0%, 0%);
+    }
+  }
+}
+
+.navigation__toggle--opened {
+  & .navigation__icon {
+    fill: $basic-black;
+  }
+
+  & .navigation__line {
+    &--1 {
+      transform: rotate(45deg) translate(20%, -5%);
+    }
+
+    &--2 {
+      opacity: 0;
+    }
+
+    &--3 {
+      transform: rotate(-45deg) translate(-50%, 5%);
     }
   }
 }

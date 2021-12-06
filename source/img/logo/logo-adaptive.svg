@@ -1,12 +1,12 @@
 <svg class="logo" width="202" height="59" viewBox="0 0 202 59" role="img" aria-label="Логотип компании" xmlns="http://www.w3.org/2000/svg">
   <style>
     .logo__mobile {
-       display: block;
-     }
+      display: block;
+    }
 
     .logo__adaptive {
-        display: none;
-      }
+      display: none;
+    }
 
     @media (min-width: 600px) {
       .logo__adaptive {

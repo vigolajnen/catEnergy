@@ -50,7 +50,7 @@
         "text text"
         "link link";
 
-        padding: 43px 30px 57px 33px;
+      padding: 43px 30px 57px 33px;
     }
   }
 
@@ -64,6 +64,7 @@
       width: 200px;
       height: 211px;
     }
+
     @media (min-width: $table2) {
       width: 100px;
       height: 106px;
@@ -88,6 +89,7 @@
       width: 268px;
       height: 200px;
     }
+
     @media (min-width: $table2) {
       width: 134px;
       height: 100px;

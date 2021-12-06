@@ -53,7 +53,9 @@
       margin: 0 75px 0 0;
       padding: 20px;
       padding-left: 0;
+
       @include adaptiv-font(36, 24);
+
       line-height: 100%;
       background-color: $default-color;
 
@@ -89,14 +91,17 @@
     & input {
       width: calc(100% - 5%);
       margin-left: 5%;
+
       @include field(10px 20px, $special_dark-grey, #e7e7e7);
       @include adaptiv-font(20, 16);
+
       line-height: 150%;
     }
   }
 
   &__theme {
     @include ListReset();
+
     padding: 20px 0;
     border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #e7e7e7;
@@ -119,10 +124,10 @@
       text-transform: uppercase;
       color: $special_dark-grey-2;
       cursor: pointer;
+    }
 
-      &:disabled {
-        opacity: 0.3;
-      }
+    & label:disabled {
+      opacity: 0.3;
     }
 
     & input:checked + label[for^="theme-"]::before {
@@ -156,11 +161,11 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 20px;
+    }
 
-      &:focus svg,
-      &:hover svg {
-        stroke: $basic-green;
-      }
+    & li:focus svg,
+    & li:hover svg {
+      stroke: $basic-green;
     }
 
     & input {
@@ -169,24 +174,25 @@
 
       @include field(10px 45px 10px 20px, $special_dark-grey, #e7e7e7);
       @include adaptiv-font(20, 16);
+
       line-height: 150%;
-
-      &:focus {
-        border-color: #444444;
-        outline: none;
-      }
-
-      &:hover {
-        border-color: #cdcdcd;
-      }
-
-      &:disabled {
-        opacity: 0.3;
-      }
 
       @media (min-width: $table) {
         margin-left: 7%;
       }
+    }
+
+    & input:focus {
+      border-color: #444444;
+      outline: none;
+    }
+
+    & input:hover {
+      border-color: #cdcdcd;
+    }
+
+    & input:disabled {
+      opacity: 0.3;
     }
 
     & svg {
@@ -204,8 +210,10 @@
     & textarea {
       width: 100%;
       min-height: 175px;
+
       @include field(10px 20px, $special_dark-grey, #e7e7e7);
       @include adaptiv-font(20, 16);
+
       line-height: 150%;
       resize: none;
     }
@@ -245,10 +253,10 @@
       background-image: url("../img/icons/icon-check.svg");
       background-repeat: no-repeat;
       background-position: 0 0;
+    }
 
-      &:disabled {
-        opacity: 0.3;
-      }
+    & input:disabled {
+      opacity: 0.3;
     }
 
     & label[for^="info-"]::after {
@@ -270,7 +278,9 @@
 
   & button[type="submit"] {
     margin-bottom: 20px;
+
     @include Button(13px, 0, $default-color, $basic-green);
+
     text-transform: uppercase;
   }
 }
