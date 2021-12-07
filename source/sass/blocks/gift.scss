@@ -33,6 +33,7 @@
 
   @media (min-width: $desktop) {
     max-width: 245px;
+    padding: 60px 42px 42px;
     flex-direction: column;
     background-image: url("../img/gift/gift-photo-desktop.jpg");
 
@@ -48,6 +49,8 @@
   }
 
   &__text {
+    margin: 0;
+    padding-top: 50px;
     max-width: 161px;
     font-family: $mainFont;
     font-style: normal;

@@ -10,6 +10,8 @@
     @media (min-width: $desktop) {
       gap: 80px;
       grid-template-columns: 1fr 245px;
+      padding-top: 35px;
+      padding-bottom: 45px;
     }
   }
 
@@ -61,7 +63,7 @@
 
   &__table {
     border-collapse: collapse;
-    margin-bottom: 45px;
+    // margin-bottom: 45px;
 
     & tr {
       display: grid;
@@ -80,7 +82,7 @@
     }
 
     & td {
-      padding: 25px 0;
+      padding: 15px 0;
       font-family: $mainFont;
       font-size: 16px;
       line-height: 125%;
@@ -117,7 +119,7 @@
   &__button {
     width: 100%;
 
-    @include Button(10px, 0, $default-color, $basic-green);
+    @include Button(10px 23px, 0, $default-color, $basic-green);
 
     font-size: 16px;
     line-height: 125%;
