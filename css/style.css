@@ -69,7 +69,8 @@ img {
 @media (min-width: 768px) {
   .page__title {
     font-size: 60px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    padding-top: 30px;
   }
 }
 
@@ -811,6 +812,7 @@ img {
 @media (min-width: 1200px) {
   .gift {
     max-width: 245px;
+    padding: 60px 42px 42px;
     flex-direction: column;
     background-image: url("../img/gift/gift-photo-desktop.jpg");
   }
@@ -825,6 +827,8 @@ img {
   height: 84px;
 }
 .gift__text {
+  margin: 0;
+  padding-top: 50px;
   max-width: 161px;
   font-family: "Arial", "Helvetica", sans-serif;
   font-style: normal;
@@ -1480,7 +1484,10 @@ img {
 }
 @media (min-width: 1200px) {
   .catalog__list {
+    gap: 80px;
+    row-gap: 65px;
     grid-template-columns: repeat(4, 1fr);
+    padding-top: 40px;
   }
 }
 @media (min-width: 1440) {
@@ -1560,7 +1567,7 @@ img {
   .product__wrapper {
     grid-template-columns: 1fr;
     grid-template-areas: "pic" "title" "info" "btn";
-    padding: 160px 37px 40px;
+    padding: 160px 38px 40px;
     background-color: #f2f2f2;
     border: none;
   }
@@ -1604,8 +1611,9 @@ img {
   width: 68px;
   height: 86px;
 }
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .product__pic--1000 {
+    bottom: 40px;
     width: 170px;
     height: 200px;
   }
@@ -1618,8 +1626,8 @@ img {
 }
 @media (min-width: 600px) {
   .product__info {
-    padding-top: 20px;
-    padding-bottom: 30px;
+    padding-top: 19px;
+    padding-bottom: 34px;
   }
 }
 .product__info-item {
@@ -1633,7 +1641,7 @@ img {
 }
 @media (min-width: 600px) {
   .product__info-item {
-    padding: 5px 0;
+    padding: 7px 0;
     font-size: 16px;
     line-height: 100%;
     border-bottom: 1px solid #cdcdcd;
@@ -1676,6 +1684,8 @@ img {
   .other-goods__wrapper {
     gap: 80px;
     grid-template-columns: 1fr 245px;
+    padding-top: 35px;
+    padding-bottom: 45px;
   }
 }
 .other-goods__title {
@@ -1725,7 +1735,6 @@ img {
 }
 .other-goods__table {
   border-collapse: collapse;
-  margin-bottom: 45px;
 }
 .other-goods__table tr {
   display: grid;
@@ -1745,7 +1754,7 @@ img {
   }
 }
 .other-goods__table td {
-  padding: 25px 0;
+  padding: 15px 0;
   font-family: "Arial", "Helvetica", sans-serif;
   font-size: 16px;
   line-height: 125%;
@@ -1782,7 +1791,7 @@ img {
   width: 100%;
   display: inline-block;
   vertical-align: middle;
-  padding: 10px;
+  padding: 10px 23px;
   text-align: center;
   color: #ffffff;
   background-color: #68b738;
