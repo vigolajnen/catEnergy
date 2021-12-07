@@ -1905,6 +1905,14 @@ img {
   );
   line-height: 150%;
 }
+.form__base input:focus {
+  border-color: #444444;
+  border-radius: 0;
+  outline: none;
+}
+.form__base input:hover {
+  border-color: #cdcdcd;
+}
 .form__theme {
   padding: 0;
   margin: 0;
@@ -2034,6 +2042,14 @@ img {
   line-height: 150%;
   resize: none;
 }
+.form__comment textarea:focus {
+  border-color: #444444;
+  border-radius: 0;
+  outline: none;
+}
+.form__comment textarea:hover {
+  border-color: #cdcdcd;
+}
 .form__other-info {
   list-style: none;
   display: grid;
@@ -2092,8 +2108,11 @@ img {
   width: 40px;
   height: 40px;
   border-width: 1px;
-  border-color: #cdcdcd;
+  border-color: #c9bbbb;
   border-style: solid;
+}
+.form__other-info label[for^=info-]:focus::after, .form__other-info label[for^=info-]:hover::after {
+  border-color: #bababa;
 }
 .form__footer {
   display: grid;
