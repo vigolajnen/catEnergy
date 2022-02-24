@@ -4,7 +4,7 @@
   const nav = document.querySelector(".navigation");
   const navBtn = nav.querySelector(".navigation__toggle");
   const navInner = document.querySelector(".navigation__list");
-  const logo = document.querySelector(".logo");
+
 
   navBtn.addEventListener("click", function (evt) {
     evt.preventDefault();
@@ -41,12 +41,5 @@
     }
   };
 
-  // var phone = document.querySelector("#phone");
-  // phone.addEventListener("input", function () {
-  //   if (phone.value.length < 16) {
-  //     phone.setCustomValidity("Введите номер телефона полностью");
-  //   } else {
-  //     phone.setCustomValidity("");
-  //   }
-  // });
+
 })();

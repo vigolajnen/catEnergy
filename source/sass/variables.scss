@@ -8,6 +8,7 @@ $maxWidth: 1440;
 $table: 768px;
 $table2: 840px;
 $table3: 960px;
+$mobile-xs: 550px;
 $mobile: 600px;
 $desktop: 1200px;
 
@@ -17,7 +18,7 @@ $mainLineHeight: 24px;
 $mainFontWeight: 400;
 
 // Main color
-$basic-black: #000000;
+$basic-black: rgba(0, 0, 0, 1);
 $basic-green: #68b738;
 $basic-dark-green: #5eaa2f;
 $basic-grey: #f2f2f2;

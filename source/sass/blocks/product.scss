@@ -1,6 +1,10 @@
 .product {
-  padding-top: 80px;
-  max-width: 324px;
+  @media (min-width: $mobile) {
+    padding-top: 80px;
+  }
+  @media (min-width: $table3) {
+    max-width: 324px;
+  }
 
   &__wrapper {
     position: relative;

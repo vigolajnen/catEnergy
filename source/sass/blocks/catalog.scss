@@ -1,32 +1,55 @@
+:root {
+  --gap: 80px;
+  --column: 1;
+
+  @media (min-width: $mobile-xs) {
+    --column: 2;
+  }
+
+  @media (min-width: $table3) {
+    --gap: 40px;
+    --column: 3;
+  }
+
+  @media (min-width: $desktop) {
+    --column: 4;
+  }
+  @media (min-width: $maxWidth) {
+    --gap: 80px;
+  }
+}
+
 .catalog {
+  padding-top: 30px;
+
   &__list {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
+
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(calc(100% / var(--column) - var(--gap)), 1fr)
+    );
     padding-top: 45px;
     padding-bottom: 45px;
     transition: $transition-base;
 
-    @media (min-width: $mobile) {
-      gap: 80px;
-      grid-template-columns: repeat(2, 1fr);
+    @media (max-width: $mobile) {
+      margin: 0 -20px;
     }
 
-    @media (min-width: $table) {
-      gap: 40px;
-      grid-template-columns: repeat(3, 1fr);
+    @media (min-width: $mobile) {
+      gap: var(--gap);
     }
 
     @media (min-width: $desktop) {
-      gap: 80px;
       row-gap: 65px;
-      grid-template-columns: repeat(4, 1fr);
+
       padding-top: 40px;
     }
+  }
 
-    @media (min-width: $maxWidth) {
-      gap: 80px;
-    }
+  &__item {
+    transition: $transition-base;
   }
 
   &__more {
